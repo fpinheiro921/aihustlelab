@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - AI Hustle Lab</title>
+    <style>
+        :root {
+            --dark-base: #121212;
+            --dark-surface: #1E1E1E;
+            --dark-elevated: #2C2C2C;
+            --accent-primary: #10B981;
+            --accent-secondary: #34D399;
+            --accent-tertiary: #6EE7B7;
+            --text-primary: #FFFFFF;
+            --text-secondary: #B3B3B3;
+            --text-tertiary: #737373;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: var(--dark-base);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 700;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+        }
+        
+        h2 {
+            font-size: 2.25rem;
+            margin-bottom: 1rem;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            color: var(--accent-primary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        a:hover {
+            color: var(--accent-secondary);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background-color: var(--accent-primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--accent-secondary);
+            color: white;
+        }
+        
+        .btn-outline {
+            border: 1px solid var(--accent-primary);
+            color: var(--accent-primary);
+            background-color: transparent;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--accent-primary);
+            color: white;
+        }
+        
+        .card {
+            background-color: var(--dark-surface);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, border-color 0.3s;
+            border: 1px solid var(--dark-elevated);
+        }
+        
+        .card:hover {
+            border-color: var(--accent-primary);
+        }
+        
+        /* Header */
+        header {
+            padding: 1.5rem 0;
+            background-color: var(--dark-base);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        
+        .logo span {
+            color: var(--accent-primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-primary);
+        }
+        
+        /* Page Header */
+        .page-header {
+            padding: 6rem 0 3rem;
+            background-color: var(--dark-surface);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-header-accent {
+            position: absolute;
+            top: -10rem;
+            right: -10rem;
+            width: 20rem;
+            height: 20rem;
+            background-color: rgba(16, 185, 129, 0.2);
+            border-radius: 50%;
+            filter: blur(5rem);
+            z-index: 0;
+        }
+        
+        .page-header-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+        
+        .page-title {
+            margin-bottom: 1rem;
+        }
+        
+        .page-description {
+            color: var(--text-secondary);
+            max-width: 36rem;
+            margin: 0 auto;
+        }
+        
+        /* About Section */
+        .about-section {
+            padding: 5rem 0;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .about-image-container {
+            position: relative;
+        }
+        
+        .about-image-wrapper {
+            position: relative;
+            background-color: var(--dark-surface);
+            padding: 0.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image {
+            width: 100%;
+            height: auto;
+            border-radius: 0.75rem;
+        }
+        
+        /* Mission Section */
+        .mission-section {
+            padding: 5rem 0;
+            background-color: var(--dark-surface);
+        }
+        
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .mission-card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .mission-icon {
+            width: 3.5rem;
+            height: 3.5rem;
+            background-color: rgba(16, 185, 129, 0.1);
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .mission-icon svg {
+            width: 2rem;
+            height: 2rem;
+            color: var(--accent-primary);
+        }
+        
+        .mission-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .mission-description {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+        
+        /* Team Section */
+        .team-section {
+            padding: 5rem 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-badge {
+            display: inline-block;
+            padding: 0.5rem 0.75rem;
+            background-color: rgba(16, 185, 129, 0.1);
+            color: var(--accent-primary);
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .section-description {
+            color: var(--text-secondary);
+            max-width: 36rem;
+            margin: 0 auto;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .team-card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .team-avatar {
+            width: 8rem;
+            height: 8rem;
+            border-radius: 9999px;
+            background-color: var(--dark-elevated);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-primary);
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        
+        .team-name {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-role {
+            color: var(--accent-primary);
+            margin-bottom: 1rem;
+        }
+        
+        .team-bio {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 5rem 0;
+            background-color: var(--dark-surface);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-accent {
+            position: absolute;
+            top: -10rem;
+            left: -10rem;
+            width: 20rem;
+            height: 20rem;
+            background-color: rgba(16, 185, 129, 0.2);
+            border-radius: 50%;
+            filter: blur(5rem);
+            z-index: 0;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 36rem;
+            margin: 0 auto;
+        }
+        
+        .cta-title {
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-description {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+        
+        .cta-button {
+            font-size: 1.125rem;
+            padding: 1rem 2rem;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            background-color: var(--dark-base);
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-logo span {
+            color: var(--accent-primary);
+        }
+        
+        .footer-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-heading {
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-link {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-link a {
+            color: var(--text-secondary);
+        }
+        
+        .footer-link a:hover {
+            color: var(--accent-primary);
+        }
+        
+        .footer-bottom {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--dark-elevated);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-tertiary);
+            font-size: 0.875rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.25rem;
+            }
+            
+            h2 {
+                font-size: 1.875rem;
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image-container {
+                order: -1;
+            }
+            
+            .mission-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">AI<span>HustleLab</span></div>
+            <nav class="nav-links">
+                <a href="/">Home</a>
+                <a href="/about.html">About</a>
+                <a href="/weekend-hustle-launcher.html">Weekend Hustle Launcher</a>
+                <a href="/contact.html">Contact</a>
+                <a href="/get-started.html" class="btn btn-outline">Get Started</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="page-header-accent"></div>
+        <div class="container">
+            <div class="page-header-content">
+                <h1 class="page-title">About AI Hustle Lab</h1>
+                <p class="page-description">We're on a mission to help entrepreneurs launch successful side hustles using the power of AI.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2>Our Story</h2>
+                    <p>AI Hustle Lab was founded in 2025 with a simple mission: to make entrepreneurship accessible to everyone. We believe that with the right tools and guidance, anyone can launch a successful side hustle, regardless of their background or experience.</p>
+                    <p>Our team of entrepreneurs, developers, and AI experts came together to create a platform that combines cutting-edge AI technology with proven business frameworks. The result is a suite of tools that helps you launch your business in a weekend, not months or years.</p>
+                    <p>We're passionate about helping people achieve financial freedom and pursue their passions. Whether you're looking to supplement your income, test a business idea, or eventually transition to full-time entrepreneurship, AI Hustle Lab is here to support you every step of the way.</p>
+                </div>
+                <div class="about-image-container">
+                    <div class="about-image-wrapper">
+                        <div class="about-image" style="height: 300px; display: flex; align-items: center; justify-content: center;">
+                            <span style="color: var(--accent-primary);">About Image Placeholder</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mission-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Our Mission</span>
+                <h2>What Drives Us</h2>
+                <p class="section-description">We're committed to democratizing entrepreneurship and helping people achieve financial freedom through side hustles.</p>
+            </div>
+            <div class="mission-grid">
+                <!-- Mission 1 -->
+                <div class="card mission-card">
+                    <div class="mission-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="mission-title">Empower Entrepreneurs</h3>
+                    <p class="mission-description">We believe everyone should have access to the tools and knowledge needed to start a successful business, regardless of their background or resources.</p>
+                </div>
+
+                <!-- Mission 2 -->
+                <div class="card mission-card">
+                    <div class="mission-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="mission-title">Save Time</h3>
+                    <p class="mission-description">Our AI-powered tools automate the most time-consuming aspects of starting a business, allowing you to launch in a weekend instead of months.</p>
+                </div>
+
+                <!-- Mission 3 -->
+                <div class="card mission-card">
+                    <div class="mission-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <h3 class="mission-title">Reduce Risk</h3>
+                    <p class="mission-description">Our proven frameworks and step-by-step guidance help you avoid common pitfalls and increase your chances of success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Our Team</span>
+                <h2>Meet the Founders</h2>
+                <p class="section-description">We're a team of entrepreneurs, developers, and AI experts passionate about helping people launch successful side hustles.</p>
+            </div>
+            <div class="team-grid">
+                <!-- Team Member 1 -->
+                <div class="card team-card">
+                    <div class="team-avatar">JP</div>
+                    <h3 class="team-name">John Patel</h3>
+                    <p class="team-role">CEO & Co-Founder</p>
+                    <p class="team-bio">Serial entrepreneur with 10+ years of experience launching and scaling startups. Passionate about using AI to solve real-world problems.</p>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="card team-card">
+                    <div class="team-avatar">SL</div>
+                    <h3 class="team-name">Sarah Lee</h3>
+                    <p class="team-role">CTO & Co-Founder</p>
+                    <p class="team-bio">AI researcher and software engineer with a background in machine learning and natural language processing. Previously at Google AI.</p>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="card team-card">
+                    <div class="team-avatar">MJ</div>
+                    <h3 class="team-name">Michael Johnson</h3>
+                    <p class="team-role">CMO & Co-Founder</p>
+                    <p class="team-bio">Marketing strategist with expertise in growth hacking and digital marketing. Has helped dozens of startups achieve product-market fit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="cta-accent"></div>
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Start Your Side Hustle?</h2>
+                <p class="cta-description">Join us on the journey to entrepreneurship and launch your profitable side hustle in a weekend.</p>
+                <a href="/get-started.html" class="btn btn-primary cta-button">
+                    Get Started
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width: 1.25rem; height: 1.25rem; margin-left: 0.5rem;">
+                        <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">AI<span>HustleLab</span></div>
+                    <p class="footer-description">Launch Your Business in a Weekend. AI-powered tools and resources to help you start your side hustle.</p>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="/">Home</a></li>
+                        <li class="footer-link"><a href="/about.html">About Us</a></li>
+                        <li class="footer-link"><a href="/services.html">Services</a></li>
+                        <li class="footer-link"><a href="/blog.html">Blog</a></li>
+                        <li class="footer-link"><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Services</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="/services/ai-tools.html">AI Tools</a></li>
+                        <li class="footer-link"><a href="/services/content-generation.html">Content Generation</a></li>
+                        <li class="footer-link"><a href="/services/business-planning.html">Business Planning</a></li>
+                        <li class="footer-link"><a href="/weekend-hustle-launcher.html">Weekend Hustle Launcher</a></li>
+                        <li class="footer-link"><a href="/services/consulting.html">Consulting</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Subscribe</h4>
+                    <p class="footer-description">Get the latest updates and resources delivered to your inbox.</p>
+                    <form style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <input type="email" placeholder="Your email address" style="padding: 0.5rem; border-radius: 0.375rem; background-color: var(--dark-elevated); border: none; color: var(--text-primary);">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>&copy; 2025 AI Hustle Lab. All rights reserved.</div>
+                <div>
+                    <a href="/privacy-policy.html">Privacy Policy</a> &bull;
+                    <a href="/terms-of-service.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
