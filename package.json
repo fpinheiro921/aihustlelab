@@ -1,0 +1,27 @@
+{
+  "name": "aihustlelab",
+  "version": "1.0.0",
+  "description": "AI Hustle Lab - Launch Your Business in a Weekend",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "keywords": ["ai", "business", "entrepreneurship", "side hustle", "weekend hustle launcher"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "next": "12.3.4",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "17.0.45",
+    "@types/react": "17.0.53",
+    "autoprefixer": "10.4.14",
+    "postcss": "8.4.24",
+    "tailwindcss": "3.3.2",
+    "typescript": "4.9.5"
+  }
+}
