@@ -14,38 +14,54 @@ const Header: React.FC = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="text-2xl font-bold">
-              <span className="text-text-primary">AI</span>
-              <span className="text-accent-primary">HustleLab</span>
+            <Link href="/">
+              <a className="text-2xl font-bold">
+                <span className="text-text-primary">AI</span>
+                <span className="text-accent-primary">HustleLab</span>
+              </a>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-text-secondary hover:text-accent-primary transition-colors">
-              Home
+            <Link href="/">
+              <a className="text-text-secondary hover:text-accent-primary transition-colors">
+                Home
+              </a>
             </Link>
-            <Link href="/about" className="text-text-secondary hover:text-accent-primary transition-colors">
-              About
+            <Link href="/about">
+              <a className="text-text-secondary hover:text-accent-primary transition-colors">
+                About
+              </a>
             </Link>
-            <Link href="/services" className="text-text-secondary hover:text-accent-primary transition-colors">
-              Services
+            <Link href="/services">
+              <a className="text-text-secondary hover:text-accent-primary transition-colors">
+                Services
+              </a>
             </Link>
-            <Link href="/blog" className="text-text-secondary hover:text-accent-primary transition-colors">
-              Blog
+            <Link href="/blog">
+              <a className="text-text-secondary hover:text-accent-primary transition-colors">
+                Blog
+              </a>
             </Link>
-            <Link href="/weekend-hustle-launcher" className="text-text-secondary hover:text-accent-primary transition-colors">
-              Weekend Hustle Launcher
+            <Link href="/weekend-hustle-launcher">
+              <a className="text-text-secondary hover:text-accent-primary transition-colors">
+                Weekend Hustle Launcher
+              </a>
             </Link>
-            <Link href="/contact" className="text-text-secondary hover:text-accent-primary transition-colors">
-              Contact
+            <Link href="/contact">
+              <a className="text-text-secondary hover:text-accent-primary transition-colors">
+                Contact
+              </a>
             </Link>
           </nav>
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Link href="/get-started" className="btn btn-primary py-2 px-4">
-              Get Started
+            <Link href="/get-started">
+              <a className="btn btn-primary py-2 px-4">
+                Get Started
+              </a>
             </Link>
           </div>
 
@@ -85,54 +101,61 @@ const Header: React.FC = () => {
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-4">
             <nav className="flex flex-col space-y-4">
-              <Link
-                href="/"
-                className="text-text-secondary hover:text-accent-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Home
+              <Link href="/">
+                <a 
+                  className="text-text-secondary hover:text-accent-primary transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Home
+                </a>
               </Link>
-              <Link
-                href="/about"
-                className="text-text-secondary hover:text-accent-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                About
+              <Link href="/about">
+                <a 
+                  className="text-text-secondary hover:text-accent-primary transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  About
+                </a>
               </Link>
-              <Link
-                href="/services"
-                className="text-text-secondary hover:text-accent-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Services
+              <Link href="/services">
+                <a 
+                  className="text-text-secondary hover:text-accent-primary transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Services
+                </a>
               </Link>
-              <Link
-                href="/blog"
-                className="text-text-secondary hover:text-accent-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Blog
+              <Link href="/blog">
+                <a 
+                  className="text-text-secondary hover:text-accent-primary transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Blog
+                </a>
               </Link>
-              <Link
-                href="/weekend-hustle-launcher"
-                className="text-text-secondary hover:text-accent-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Weekend Hustle Launcher
+              <Link href="/weekend-hustle-launcher">
+                <a 
+                  className="text-text-secondary hover:text-accent-primary transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Weekend Hustle Launcher
+                </a>
               </Link>
-              <Link
-                href="/contact"
-                className="text-text-secondary hover:text-accent-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Contact
+              <Link href="/contact">
+                <a 
+                  className="text-text-secondary hover:text-accent-primary transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Contact
+                </a>
               </Link>
-              <Link
-                href="/get-started"
-                className="btn btn-primary py-2 px-4 inline-block text-center"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Get Started
+              <Link href="/get-started">
+                <a 
+                  className="btn btn-primary py-2 px-4 inline-block text-center"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Get Started
+                </a>
               </Link>
             </nav>
           </div>

@@ -10,9 +10,11 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Brand Column */}
           <div className="col-span-1">
-            <Link href="/" className="text-2xl font-bold mb-4 inline-block">
-              <span className="text-text-primary">AI</span>
-              <span className="text-accent-primary">HustleLab</span>
+            <Link href="/">
+              <a className="text-2xl font-bold mb-4 inline-block">
+                <span className="text-text-primary">AI</span>
+                <span className="text-accent-primary">HustleLab</span>
+              </a>
             </Link>
             <p className="text-text-secondary mb-4">
               Launch Your Business in a Weekend. AI-powered tools and resources to help you start your side hustle.
@@ -90,28 +92,38 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className="text-text-secondary hover:text-accent-primary transition-colors">
-                  Home
+                <Link href="/">
+                  <a className="text-text-secondary hover:text-accent-primary transition-colors">
+                    Home
+                  </a>
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-text-secondary hover:text-accent-primary transition-colors">
-                  About Us
+                <Link href="/about">
+                  <a className="text-text-secondary hover:text-accent-primary transition-colors">
+                    About Us
+                  </a>
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-text-secondary hover:text-accent-primary transition-colors">
-                  Services
+                <Link href="/services">
+                  <a className="text-text-secondary hover:text-accent-primary transition-colors">
+                    Services
+                  </a>
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-text-secondary hover:text-accent-primary transition-colors">
-                  Blog
+                <Link href="/blog">
+                  <a className="text-text-secondary hover:text-accent-primary transition-colors">
+                    Blog
+                  </a>
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-text-secondary hover:text-accent-primary transition-colors">
-                  Contact
+                <Link href="/contact">
+                  <a className="text-text-secondary hover:text-accent-primary transition-colors">
+                    Contact
+                  </a>
                 </Link>
               </li>
             </ul>
@@ -122,28 +134,38 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-bold mb-4">Services</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/services/ai-tools" className="text-text-secondary hover:text-accent-primary transition-colors">
-                  AI Tools
+                <Link href="/services/ai-tools">
+                  <a className="text-text-secondary hover:text-accent-primary transition-colors">
+                    AI Tools
+                  </a>
                 </Link>
               </li>
               <li>
-                <Link href="/services/content-generation" className="text-text-secondary hover:text-accent-primary transition-colors">
-                  Content Generation
+                <Link href="/services/content-generation">
+                  <a className="text-text-secondary hover:text-accent-primary transition-colors">
+                    Content Generation
+                  </a>
                 </Link>
               </li>
               <li>
-                <Link href="/services/business-planning" className="text-text-secondary hover:text-accent-primary transition-colors">
-                  Business Planning
+                <Link href="/services/business-planning">
+                  <a className="text-text-secondary hover:text-accent-primary transition-colors">
+                    Business Planning
+                  </a>
                 </Link>
               </li>
               <li>
-                <Link href="/weekend-hustle-launcher" className="text-text-secondary hover:text-accent-primary transition-colors">
-                  Weekend Hustle Launcher
+                <Link href="/weekend-hustle-launcher">
+                  <a className="text-text-secondary hover:text-accent-primary transition-colors">
+                    Weekend Hustle Launcher
+                  </a>
                 </Link>
               </li>
               <li>
-                <Link href="/services/consulting" className="text-text-secondary hover:text-accent-primary transition-colors">
-                  Consulting
+                <Link href="/services/consulting">
+                  <a className="text-text-secondary hover:text-accent-primary transition-colors">
+                    Consulting
+                  </a>
                 </Link>
               </li>
             </ul>
@@ -178,11 +200,15 @@ const Footer: React.FC = () => {
         <div className="pt-8 border-t border-dark-elevated text-center text-text-tertiary text-sm">
           <p>© {currentYear} AI Hustle Lab. All rights reserved.</p>
           <div className="mt-2 space-x-4">
-            <Link href="/privacy-policy" className="hover:text-accent-primary transition-colors">
-              Privacy Policy
+            <Link href="/privacy-policy">
+              <a className="hover:text-accent-primary transition-colors">
+                Privacy Policy
+              </a>
             </Link>
-            <Link href="/terms-of-service" className="hover:text-accent-primary transition-colors">
-              Terms of Service
+            <Link href="/terms-of-service">
+              <a className="hover:text-accent-primary transition-colors">
+                Terms of Service
+              </a>
             </Link>
           </div>
         </div>
